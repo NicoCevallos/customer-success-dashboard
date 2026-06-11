@@ -25,7 +25,7 @@ The app runs entirely in the browser — there is no backend or API to set up.
 
 - **SvelteKit** project with TypeScript
 - **shadcn-svelte** (style: Vega, icon library: Lucide) — the following components are pre-installed:
-  - `badge`, `button`, `card`, `dialog`, `input`
+  - `badge`, `button`, `card`, `dialog`, `input`, `select`
   - Browse [shadcn-svelte.com/docs/components](https://shadcn-svelte.com/docs/components) and use `npx shadcn-svelte@latest add <component>` to add more
 - **AG Grid Community** (`ag-grid-community`) — already installed
 - **Customer dataset** — 500 generated records at `src/lib/data/customers.ts`
