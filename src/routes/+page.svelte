@@ -1,5 +1,14 @@
 <script lang="ts">
-  import { customers } from '$lib/data/customers';
+  import DashboardSummary from '$lib/components/dashboard-summary/DashboardSummary.svelte';
+  import CustomersGridWithFilter from '$lib/components/customers-grid/CustomersGridWithFilter.svelte';
+  import { customers } from '$lib/stores/customers.svelte';
+  import { getMetrics } from '$lib/stores/metrics.svelte';
+
+  let metrics = getMetrics();
 </script>
 
-<h1>Customers ({customers.length})</h1>
+<main class="mx-4">
+  <DashboardSummary {metrics} />
+
+  <CustomersGridWithFilter {customers} />
+</main>
