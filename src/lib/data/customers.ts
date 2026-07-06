@@ -1,4 +1,5 @@
-import type { Customer } from '$lib/types';
+import { type Customer } from '$lib/types';
+import { customerPlanValues, customerStatusValues } from '$lib/utils/consts';
 
 const companyPrefixes = [
   'Northwind',
@@ -56,11 +57,11 @@ function makeDate(seed: number) {
   return date.toISOString();
 }
 
-export const customers: Customer[] = Array.from({ length: 500 }, (_, i) => {
+export const customersData: Customer[] = Array.from({ length: 500 }, (_, i) => {
   const prefix = pick(companyPrefixes, i);
   const suffix = pick(companySuffixes, i * 3);
-  const plan = randomChoice(i + 1, ['Free', 'Pro', 'Enterprise'] as const);
-  const status = randomChoice(i * 7 + 1, ['Active', 'At Risk', 'Churned'] as const);
+  const plan = randomChoice(i + 1, customerPlanValues);
+  const status = randomChoice(i * 7 + 1, customerStatusValues);
   return {
     id: `cust_${i + 1}`,
     companyName: `${prefix} ${suffix} ${i + 1}`,
